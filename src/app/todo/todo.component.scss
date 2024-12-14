@@ -1,0 +1,118 @@
+$primary-color: #4caf50;
+$secondary-color: #f44336;
+$text-color: #333;
+$background-color: #f9f9f9;
+$border-radius: 8px;
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+$padding: 15px;
+$transition: all 0.3s ease;
+
+// General styles
+.todo-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  background-color: $background-color;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  padding: $padding;
+  text-align: center;
+}
+
+h1 {
+  color: $primary-color;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.8rem;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid lighten($primary-color, 20%);
+  border-radius: $border-radius;
+  outline: none;
+  transition: $transition;
+
+  &:focus {
+    border-color: $primary-color;
+    box-shadow: 0 0 5px $primary-color;
+  }
+}
+
+button {
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: $transition;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+
+  &:active {
+    background-color: darken($primary-color, 20%);
+  }
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lighten($background-color, 10%);
+  border-radius: $border-radius;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: $box-shadow;
+  transition: $transition;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  &.completed {
+    text-decoration: line-through;
+    color: $secondary-color;
+  }
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+// Responsive Design
+@media (max-width: 500px) {
+  .todo-container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  input[type="text"],
+  button {
+    font-size: 0.9rem;
+  }
+}
